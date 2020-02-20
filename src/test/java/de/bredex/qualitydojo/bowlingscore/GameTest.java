@@ -13,6 +13,10 @@ public class GameTest {
 		public boolean isComplete() {
 			return true;
 		}
+
+		@Override
+		public void roll(int numberOfPinsKnockedDown) {
+		}
 	}
 
 

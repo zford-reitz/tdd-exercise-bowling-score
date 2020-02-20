@@ -4,4 +4,6 @@ public interface Frame {
 
 	boolean isComplete();
 
+	void roll(int numberOfPinsKnockedDown);
+
 }
