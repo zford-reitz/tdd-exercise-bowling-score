@@ -7,16 +7,15 @@ import org.junit.Test;
 
 public class FrameTest {
 
+	private Frame frame = new StandardTenPinBowlingFrame();
+
 	@Test
 	public void frameWithNoRollsIsNotComplete() {
-		Frame frame = new StandardTenPinBowlingFrame();
-		
 		assertFalse(frame.isComplete());
 	}
 	
 	@Test
 	public void frameWithTwoRollsIsComplete() {
-		Frame frame = new StandardTenPinBowlingFrame();
 		frame.roll(0);
 		frame.roll(0);
 		
