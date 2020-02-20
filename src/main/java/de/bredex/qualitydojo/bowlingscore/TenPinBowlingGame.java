@@ -14,4 +14,9 @@ public class TenPinBowlingGame implements Game {
 		this.totalNumberOfPinsKnockedDown += numberOfPinsKnockedDown;
 	}
 
+	@Override
+	public boolean isComplete() {
+		return false;
+	}
+
 }

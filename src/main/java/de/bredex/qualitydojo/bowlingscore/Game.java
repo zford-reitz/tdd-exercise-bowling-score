@@ -6,4 +6,6 @@ public interface Game {
 
 	void roll(int numberOfPinsKnockedDown);
 
+	boolean isComplete();
+
 }

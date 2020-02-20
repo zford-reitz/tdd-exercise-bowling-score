@@ -1,6 +1,7 @@
 package de.bredex.qualitydojo.bowlingscore;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 
 import org.junit.Test;
 
@@ -25,6 +26,11 @@ public class GameTest {
 		rollAll(1);
 		
 		assertEquals(20, game.getScore());
+	}
+
+	@Test
+	public void gameWithNoRollsIsNotComplete() {
+		assertFalse(game.isComplete());
 	}
 	
 	private void rollAll(int numberOfPinsPerRoll) {
