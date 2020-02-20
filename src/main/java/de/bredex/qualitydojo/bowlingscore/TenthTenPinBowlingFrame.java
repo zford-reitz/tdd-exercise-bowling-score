@@ -9,7 +9,7 @@ public class TenthTenPinBowlingFrame implements Frame {
 
 	@Override
 	public boolean isComplete() {
-		return numberOfRolls == 3 || hasNoBonusRolls();
+		return numberOfRolls > 0 && (numberOfRolls == 3 || hasNoBonusRolls());
 	}
 
 	private boolean hasNoBonusRolls() {

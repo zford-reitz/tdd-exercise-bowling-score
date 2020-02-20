@@ -54,8 +54,14 @@ public class GameTest {
 		
 		assertTrue(game.isComplete());
 	}
-	
 
+	@Test
+	public void gameIsNotCompleteWhenFinalFrameIsNotComplete() {
+		game = new TenPinBowlingGame(new TenthTenPinBowlingFrame());
+		
+		assertFalse(game.isComplete());
+	}
+	
 	private void rollAll(int numberOfPinsPerRoll) {
 		for (int i = 0; i < 20; i++) {
 			game.roll(numberOfPinsPerRoll);
