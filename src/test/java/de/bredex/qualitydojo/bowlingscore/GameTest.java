@@ -13,4 +13,15 @@ public class GameTest {
 		assertEquals(0, game.getScore());
 	}
 	
+	@Test
+	public void scoreIsZeroForScorelessGame() {
+		Game game = new TenPinBowlingGame();
+		
+		for (int i = 0; i < 20; i++) {
+			game.roll(0);
+		}
+		
+		assertEquals(0, game.getScore());
+	}
+	
 }

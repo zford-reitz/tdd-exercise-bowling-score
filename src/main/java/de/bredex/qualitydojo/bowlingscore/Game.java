@@ -4,4 +4,6 @@ public interface Game {
 
 	int getScore();
 
+	void roll(int numberOfPinsKnockedDown);
+
 }

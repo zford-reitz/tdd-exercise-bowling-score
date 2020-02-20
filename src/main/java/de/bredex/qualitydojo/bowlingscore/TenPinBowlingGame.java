@@ -7,4 +7,8 @@ public class TenPinBowlingGame implements Game {
 		return 0;
 	}
 
+	@Override
+	public void roll(int numberOfPinsKnockedDown) {
+	}
+
 }
