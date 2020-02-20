@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class GameTest {
@@ -20,7 +21,12 @@ public class GameTest {
 	}
 
 
-	private Game game = new TenPinBowlingGame();
+	private Game game;
+	
+	@Before
+	public void setup() {
+		game = new TenPinBowlingGame();
+	}
  
 	@Test
 	public void scoreIsZeroAtStartOfGame() {

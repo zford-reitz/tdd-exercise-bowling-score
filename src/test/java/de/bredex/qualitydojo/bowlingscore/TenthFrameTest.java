@@ -3,12 +3,18 @@ package de.bredex.qualitydojo.bowlingscore;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class TenthFrameTest {
 
-	private Frame frame = new TenthTenPinBowlingFrame();
+	private Frame frame;
 
+	@Before
+	public void setup() {
+		 frame = new TenthTenPinBowlingFrame();
+	}
+	
 	@Test
 	public void openFrameWithTwoRollsIsComplete() {
 		frame.roll(0);
