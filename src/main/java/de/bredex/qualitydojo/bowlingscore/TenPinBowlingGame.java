@@ -3,7 +3,7 @@ package de.bredex.qualitydojo.bowlingscore;
 public class TenPinBowlingGame implements Game {
 
 	private int totalNumberOfPinsKnockedDown = 0;
-
+	
 	@Override
 	public int getScore() {
 		return this.totalNumberOfPinsKnockedDown;
@@ -12,6 +12,9 @@ public class TenPinBowlingGame implements Game {
 	@Override
 	public void roll(int numberOfPinsKnockedDown) {
 		this.totalNumberOfPinsKnockedDown += numberOfPinsKnockedDown;
+		if (totalNumberOfPinsKnockedDown == 100) {
+			totalNumberOfPinsKnockedDown += 50;
+		}
 	}
 
 }
