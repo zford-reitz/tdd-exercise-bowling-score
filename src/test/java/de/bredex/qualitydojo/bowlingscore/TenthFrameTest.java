@@ -42,4 +42,21 @@ public class TenthFrameTest {
 		
 		assertFalse(frame.isComplete());
 	}
+
+	@Test
+	public void frameWithTwoStrikesIsNotComplete() {
+		frame.roll(10);
+		frame.roll(10);
+		
+		assertFalse(frame.isComplete());
+	}
+
+	@Test
+	public void frameWithThreeStrikesIsComplete() {
+		frame.roll(10);
+		frame.roll(10);
+		frame.roll(10);
+		
+		assertTrue(frame.isComplete());
+	}
 }
