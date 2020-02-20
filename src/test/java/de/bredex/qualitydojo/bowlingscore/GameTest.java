@@ -8,6 +8,14 @@ import org.junit.Test;
 
 public class GameTest {
 
+	private final class CompletedFrame implements Frame {
+		@Override
+		public boolean isComplete() {
+			return true;
+		}
+	}
+
+
 	private Game game = new TenPinBowlingGame();
  
 	@Test
@@ -37,12 +45,7 @@ public class GameTest {
 	@Test
 	public void gameIsCompleteWhenFinalFrameIsComplete() {
 		// Given
-		Frame finalFrame = new Frame() {
-			@Override
-			public boolean isComplete() {
-				return true;
-			}
-		};
+		Frame finalFrame = new CompletedFrame();
 		game = new TenPinBowlingGame(finalFrame);
 		
 		assertTrue(game.isComplete());
