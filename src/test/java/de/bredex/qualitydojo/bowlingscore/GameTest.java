@@ -27,13 +27,6 @@ public class GameTest {
 		assertEquals(20, game.getScore());
 	}
 	
-	@Test
-	public void scoreEachFrameIsSpare() {
-		rollAll(5);
-		
-		assertEquals(150, game.getScore());
-	}
-	
 	private void rollAll(int numberOfPinsPerRoll) {
 		for (int i = 0; i < 20; i++) {
 			game.roll(numberOfPinsPerRoll);
