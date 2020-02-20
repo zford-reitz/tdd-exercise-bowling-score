@@ -2,7 +2,7 @@ package de.bredex.qualitydojo.bowlingscore;
 
 public class TenPinBowlingGame implements Game {
 
-	private int totalNumberOfPinsKnockedDown;
+	private int totalNumberOfPinsKnockedDown = 0;
 
 	@Override
 	public int getScore() {
