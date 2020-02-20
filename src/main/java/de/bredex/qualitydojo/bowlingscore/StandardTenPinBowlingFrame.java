@@ -1,6 +1,6 @@
 package de.bredex.qualitydojo.bowlingscore;
 
-public class TenPinBowlingFrame implements Frame {
+public class StandardTenPinBowlingFrame implements Frame {
 
 	private int numberOfRolls = 0;
 	
