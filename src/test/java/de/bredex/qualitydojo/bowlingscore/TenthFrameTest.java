@@ -18,6 +18,13 @@ public class TenthFrameTest {
 	}
 
 	@Test
+	public void openFrameWithOneRollsIsNotComplete() {
+		frame.roll(0);
+		
+		assertFalse(frame.isComplete());
+	}
+
+	@Test
 	public void frameWithSpareIsNotComplete() {
 		frame.roll(3);
 		frame.roll(7);
