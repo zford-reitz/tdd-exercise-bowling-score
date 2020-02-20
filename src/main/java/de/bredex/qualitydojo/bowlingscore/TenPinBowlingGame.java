@@ -2,16 +2,16 @@ package de.bredex.qualitydojo.bowlingscore;
 
 public class TenPinBowlingGame implements Game {
 
-	private int numberOfPinsKnockedDown;
+	private int totalNumberOfPinsKnockedDown;
 
 	@Override
 	public int getScore() {
-		return this.numberOfPinsKnockedDown;
+		return this.totalNumberOfPinsKnockedDown;
 	}
 
 	@Override
 	public void roll(int numberOfPinsKnockedDown) {
-		this.numberOfPinsKnockedDown += numberOfPinsKnockedDown;
+		this.totalNumberOfPinsKnockedDown += numberOfPinsKnockedDown;
 	}
 
 }
