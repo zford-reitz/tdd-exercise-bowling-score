@@ -21,4 +21,11 @@ public class FrameTest {
 		
 		assertTrue(frame.isComplete());
 	}
+
+	@Test
+	public void frameWithStrikeIsComplete() {
+		frame.roll(10);
+		
+		assertTrue(frame.isComplete());
+	}
 }
