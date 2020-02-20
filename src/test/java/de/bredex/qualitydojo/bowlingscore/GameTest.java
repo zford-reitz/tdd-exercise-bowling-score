@@ -15,19 +15,21 @@ public class GameTest {
 	
 	@Test
 	public void scoreIsZeroForScorelessGame() {
-		for (int i = 0; i < 20; i++) {
-			game.roll(0);
-		}
+		rollAll(0);
 		
 		assertEquals(0, game.getScore());
 	}
 
 	@Test
 	public void scoreForAllOpenFrames() {
-		for (int i = 0; i < 20; i++) {
-			game.roll(1);
-		}
+		rollAll(1);
 		
 		assertEquals(20, game.getScore());
+	}
+	
+	private void rollAll(int numberOfPinsPerRoll) {
+		for (int i = 0; i < 20; i++) {
+			game.roll(numberOfPinsPerRoll);
+		}
 	}
 }
