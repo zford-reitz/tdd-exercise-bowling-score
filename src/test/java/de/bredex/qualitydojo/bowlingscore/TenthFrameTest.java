@@ -24,4 +24,15 @@ public class TenthFrameTest {
 		
 		assertFalse(frame.isComplete());
 	}
+
+	@Test
+	public void frameWithSpareAndThirdRollIsComplete() {
+		frame.roll(6);
+		frame.roll(4);
+		
+		// Initially tried 4 here, and test passed although I didn't expect it to
+		frame.roll(0);
+		
+		assertTrue(frame.isComplete());
+	}
 }
