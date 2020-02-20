@@ -6,17 +6,15 @@ import org.junit.Test;
 
 public class GameTest {
 
+	private Game game = new TenPinBowlingGame();
+ 
 	@Test
 	public void scoreIsZeroAtStartOfGame() {
-		Game game = new TenPinBowlingGame();
-		
 		assertEquals(0, game.getScore());
 	}
 	
 	@Test
 	public void scoreIsZeroForScorelessGame() {
-		Game game = new TenPinBowlingGame();
-		
 		for (int i = 0; i < 20; i++) {
 			game.roll(0);
 		}
