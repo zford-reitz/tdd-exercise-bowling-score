@@ -2,6 +2,7 @@ package de.bredex.qualitydojo.bowlingscore;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -33,6 +34,16 @@ public class GameTest {
 		assertFalse(game.isComplete());
 	}
 	
+	@Test
+	public void gameIsCompleteWhenFinalFrameIsComplete() {
+		// Given
+		Frame finalFrame = new TenPinBowlingFrame();
+		game = new TenPinBowlingGame(finalFrame);
+		
+		assertTrue(game.isComplete());
+	}
+	
+
 	private void rollAll(int numberOfPinsPerRoll) {
 		for (int i = 0; i < 20; i++) {
 			game.roll(numberOfPinsPerRoll);
