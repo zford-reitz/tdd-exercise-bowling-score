@@ -37,7 +37,12 @@ public class GameTest {
 	@Test
 	public void gameIsCompleteWhenFinalFrameIsComplete() {
 		// Given
-		Frame finalFrame = new TenPinBowlingFrame();
+		Frame finalFrame = new Frame() {
+			@Override
+			public boolean isComplete() {
+				return true;
+			}
+		};
 		game = new TenPinBowlingGame(finalFrame);
 		
 		assertTrue(game.isComplete());

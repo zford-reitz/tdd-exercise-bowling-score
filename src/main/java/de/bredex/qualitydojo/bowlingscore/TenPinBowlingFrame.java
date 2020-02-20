@@ -4,7 +4,7 @@ public class TenPinBowlingFrame implements Frame {
 
 	@Override
 	public boolean isComplete() {
-		return true;
+		return false;
 	}
 
 }
