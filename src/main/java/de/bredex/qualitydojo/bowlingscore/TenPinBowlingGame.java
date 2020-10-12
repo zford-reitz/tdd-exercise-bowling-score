@@ -2,6 +2,8 @@ package de.bredex.qualitydojo.bowlingscore;
 
 import java.util.Iterator;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class TenPinBowlingGame implements Game {
 
@@ -11,6 +13,10 @@ public class TenPinBowlingGame implements Game {
 	private Iterator<Frame> frameIterator;
 	private Frame currentFrame;
 
+	public TenPinBowlingGame() {
+		this(createDefaultFrames());
+	}
+	
 	public TenPinBowlingGame(List<Frame> frames) {
 		this.frames = frames;
 		this.frameIterator = this.frames.iterator();
@@ -38,6 +44,12 @@ public class TenPinBowlingGame implements Game {
 
 	private boolean isFinalFrame() {
 		return !this.frameIterator.hasNext();
+	}
+
+	private static List<Frame> createDefaultFrames() {
+		List<Frame> defaultFrames = Stream.generate(StandardTenPinBowlingFrame::new).limit(9).collect(Collectors.toList());
+		defaultFrames.add(new TenthTenPinBowlingFrame());
+		return defaultFrames;
 	}
 
 }

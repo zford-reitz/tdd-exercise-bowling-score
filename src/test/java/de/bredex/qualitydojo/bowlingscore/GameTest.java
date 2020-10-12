@@ -5,9 +5,6 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.util.Collections;
-import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -30,10 +27,7 @@ public class GameTest {
 	
 	@Before
 	public void setup() {
-		List<Frame> frames = Stream.generate(StandardTenPinBowlingFrame::new).limit(9).collect(Collectors.toList());
-		frames.add(new TenthTenPinBowlingFrame());
-		
-		game = new TenPinBowlingGame(frames);
+		game = new TenPinBowlingGame();
 	}
  
 	@Test
