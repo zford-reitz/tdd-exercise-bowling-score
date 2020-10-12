@@ -88,7 +88,7 @@ public class GameTest {
 	}
 	
 	private void rollAll(int numberOfPinsPerRoll) {
-		for (int i = 0; i < 20; i++) {
+		while (!game.isComplete()) {
 			game.roll(numberOfPinsPerRoll);
 		}
 	}
