@@ -1,16 +1,20 @@
 package de.bredex.qualitydojo.bowlingscore;
 
+import java.util.Iterator;
+import java.util.List;
+
 public class TenPinBowlingGame implements Game {
 
 	private int totalNumberOfPinsKnockedDown = 0;
-	private Frame frame = null;
+	private List<Frame> frames;
 
-	public TenPinBowlingGame() {
-	}
+	private Iterator<Frame> frameIterator;
+	private Frame currentFrame;
 
-	public TenPinBowlingGame(Frame frame) {
-		this.frame = frame;
-		
+	public TenPinBowlingGame(List<Frame> frames) {
+		this.frames = frames;
+		this.frameIterator = this.frames.iterator();
+		this.currentFrame = this.frameIterator.next();
 	}
 
 	@Override
@@ -21,15 +25,19 @@ public class TenPinBowlingGame implements Game {
 	@Override
 	public void roll(int numberOfPinsKnockedDown) {
 		this.totalNumberOfPinsKnockedDown += numberOfPinsKnockedDown;
+		this.currentFrame.roll(numberOfPinsKnockedDown);
+		if (this.currentFrame.isComplete() && this.frameIterator.hasNext()) {
+			this.currentFrame = this.frameIterator.next();
+		}
 	}
 
 	@Override
 	public boolean isComplete() {
-		if (frame == null) {
-			return false;
-		} else {
-			return frame.isComplete();
-		}
+		return isFinalFrame() && this.currentFrame.isComplete();
+	}
+
+	private boolean isFinalFrame() {
+		return !this.frameIterator.hasNext();
 	}
 
 }
